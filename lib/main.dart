@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:localization/packages/detail_page.dart';
 import 'package:localization/packages/home_page.dart';
+import 'package:localization/packages/network_employees.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +34,11 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: HomePage(),
+      routes: {
+        HomePage.id: (context) => const HomePage(),
+        NetEmployees.id: (context) => const NetEmployees(),
+        DetailPage.id: (context) => const DetailPage(index: 0,),
+      },
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
